@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/Web_Projem.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body>
+<body style="overflow: hidden;">
 
-    <div class="row">
-        <div class="col-3" style="height:90vh;background-color:black">
+    <div class="row" >
+        <div class="col-2" style="height:90vh;background-color:black;">
 
             <div>
                 <h1 style="color:white">SaüLine</h1>
@@ -31,59 +31,26 @@
                     </li>
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">person</i>       Profil</a>
+                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">person</i>       Profilim</a>
                     </li>
                    
                 </ul>
 
             </div>
+            
 
         </div>
-        <div class="col-6">
+        <div class="col-10" style="background-color:rgb(30,30,30)">
             <div class="flex-column">
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
             </div>
         </div>
-        <div class="col-3">
-            <div>
-                arkadaş ekle
-            </div>
         </div>
-    </div>
-
-    @* <div class="offcanvas-body">
-    <div class="container mt-3">
-
-    <ul class="nav flex-column">
-    <li class="nav-item">
-
-    <a class="nav-link" href="#"><i class="material-icons">home</i> Anasayfa</a>
-    </li>
-    <li class="nav-item">
-    <i class="material-icons">search</i>
-    <a class="nav-link" href="#">Arama</a>
-    </li>
-    <li class="nav-item">
-    <i class="material-icons">attachment</i>
-    <a class="nav-link" href="#">Bildirimler</a>
-    </li>
-    <li class="nav-item">
-    <i class="material-icons">person</i>
-    <a class="nav-link" href="#">Profil</a>
-    </li>
-    </div>
-    </div>
-    *@
-
-    @*<main role="main" class="pb-3">
-    @RenderBody()
-    </main>*@
-
 
     <footer class="border-top footer text-muted">
-        <div style="height:10vh;width:100vw;background-color:black;color:white;align-content:center">
+        <div style="height:10vh;width:100vw;padding-left:40%;background-color:black;color:white;align-content:space-around;align-items:center">
             &copy; 2022 - Resul Çalışkan B191210002 SaüLine - 
         </div>
     </footer>
