@@ -1,4 +1,4 @@
-# WebProgramlama-MVC-
+# SauLine_WP MVC 
 Projenin amacı, Web Programlama dersinde teorik ve pratik olarak öğrenilen bilgilerin, gerçek bir probleme uygulanarak bu probleme çözüm üreten bir web projesi geliştirilmesi.Sakarya Üniversitesi
 * C# Asp.Net MVC kullanılarak
   ** Front-end olmalıdır.
