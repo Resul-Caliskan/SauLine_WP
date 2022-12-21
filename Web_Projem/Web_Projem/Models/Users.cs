@@ -6,9 +6,9 @@ namespace Web_Projem.Models
     {
         [Display(Name="Kullanıcı Adı")]
         [Required(ErrorMessage ="Kullanıcı Adı Alanı Zorunlu")]
-        public String UserName { get; set; }
+        public String? UserName { get; set; }
         [Required(ErrorMessage ="Şifre Alanı Zorunlu")]
         [Display(Name ="Şifre")]
-        public String Password { get; set; }
+        public String? Password { get; set; }
     }
 }

@@ -9061,11 +9061,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\WebProgramlama-MVC-\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
+      "projectUniqueName": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\SauLine_WP\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
       "projectName": "Web_Projem",
-      "projectPath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\WebProgramlama-MVC-\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
+      "projectPath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\SauLine_WP\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
       "packagesPath": "C:\\Users\\resul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\WebProgramlama-MVC-\\Web_Projem\\Web_Projem\\obj\\",
+      "outputPath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\SauLine_WP\\Web_Projem\\Web_Projem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\resul\\AppData\\Roaming\\NuGet\\NuGet.Config",

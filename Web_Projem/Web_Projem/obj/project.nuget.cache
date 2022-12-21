@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ChcOpFPfE55v2qxAUlxojtzKNo9UHPfqsI2KmauBzPFzQciK8zYawIqCB4YMSS5rqgzheqjcHC2b/H9Kw+h30g==",
+  "dgSpecHash": "5ErWivBdpR6r9+d5Bj7p98M6zkjH2dXkhpZAzJQZhaBGbDg7nNEpfHvdQ81/2gPh6hhVujeq0/uavJUdhYX9fw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\WebProgramlama-MVC-\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
+  "projectFilePath": "C:\\Users\\resul\\OneDrive\\Masaüstü\\Web Projem\\SauLine_WP\\Web_Projem\\Web_Projem\\Web_Projem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\resul\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\resul\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
