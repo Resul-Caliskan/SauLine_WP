@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/Web_Projem.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body style="overflow: hidden;">
+<body style="overflow: auto;overflow-x:hidden;background-color:rgb(30,30,30)">
 
     <div class="row" >
-        <div class="col-2" style="height:90vh;background-color:black;">
+        <div class="col-2" style="height:100vh;background-color:black;position:fixed">
 
             <div>
                 <h1 style="color:white">SaüLine</h1>
@@ -40,20 +40,21 @@
             
 
         </div>
+        <div class="col-2" style="background-color:rgb(30,30,30)"></div>
         <div class="col-10" style="background-color:rgb(30,30,30)">
-            <div class="flex-column">
-                <main role="main" class="pb-3">
+
+            <main role="main" class="pb-3" ">
                     @RenderBody()
                 </main>
-            </div>
+            
         </div>
         </div>
 
-    <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">
         <div style="height:10vh;width:100vw;padding-left:40%;background-color:black;color:white;align-content:space-around;align-items:center">
             &copy; 2022 - Resul Çalışkan B191210002 SaüLine - 
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

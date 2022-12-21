@@ -1,8 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<br>
+<br>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@* alltaki kod dögü içine alınacak*@
+
+<div class="row" style="height:95%;background-color:rgb(30,30,30)">
+    <div class="col-2"></div>
+    <div class="col-4" style="border-style:solid;border-color:rgb(35,35,35);color:white;height:70%">
+       
+        <div style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);">
+            Adı
+        </div>
+        <div style="display:table;height:70%;width:100%">
+            <image src="https://www.demirkolstore.com/wp-content/uploads/2021/03/H7da7463f16df4edaaf791eb09c1bae4aT-256x1024.png" style="background-size:cover"></image>
+        </div>
+        <div style="border-style:solid;border-radius:2%;border-color:rgb(35,35,35);">
+            <button class="btn btn-outline-primary" style="border:none"> <i class="material-icons">favorite</i> </button>
+            <p>begenlenler</p>
+        </div>
+        <div class="row" >
+            <div class="col-10"> <input type="text" placeholder="Yorum Ekle..." style="background-color:black;color:white;width:90%"></div>
+            <div class="col-2"><button class="btn btn-outline-primary" style="border:none">paylaş</button></div>
+        </div>
+    </div>
+    <div class="col-6"></div>
 </div>
