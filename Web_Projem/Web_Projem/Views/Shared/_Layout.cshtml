@@ -11,7 +11,7 @@
 </head>
 <body style="overflow: auto;overflow-x:hidden;background-color:rgb(30,30,30)">
 
-    <div class="row" >
+    <div class="row">
         <div class="col-2" style="height:100vh;background-color:black;position:fixed">
 
             <div>
@@ -19,45 +19,72 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">home</i>     Anasayfa</a>
+                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
                     </li>
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">search</i>   Arama</a>
+                        <button class="btn btn-outline-secondary" style="color:white;border:none" onclick="Arama()"><i class="material-icons">search</i>   Arama</button>
+                        @* aram kisimi yazilacak*@
+                        <div style="display:none;color:white;" id="search">
+                            @* onkeypress fonksiyonu eklenecek*@
+                           <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:90%">
+                        </div>
+
+                    </li>
+                    <li class="nav-item">
+                        
+                        <button class="btn btn-outline-secondary" style="color:white;border:none" onclick="Bildirim()"><i class="material-icons">attachment</i>      Bildirimler</button>
+                        @* bildirimler ekelenecek *@
+                        <div style="display:none" id="attachment"> bildirim falan filan</div>
+                    
                     </li>
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">attachment</i>      Bildirimler</a>
-                    </li>
-                    <li class="nav-item">
+                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
 
-                        <a class="nav-link" style="color:white" href="#"><i class="material-icons">person</i>       Profilim</a>
                     </li>
-                   
+
                 </ul>
 
             </div>
-            
+
+
+
 
         </div>
         <div class="col-2" style="background-color:rgb(30,30,30)"></div>
         <div class="col-10" style="background-color:rgb(30,30,30)">
 
             <main role="main" class="pb-3" ">
-                    @RenderBody()
-                </main>
-            
-        </div>
-        </div>
+                @RenderBody()
+            </main>
 
-    @*<footer class="border-top footer text-muted">
-        <div style="height:10vh;width:100vw;padding-left:40%;background-color:black;color:white;align-content:space-around;align-items:center">
-            &copy; 2022 - Resul Çalışkan B191210002 SaüLine - 
         </div>
-    </footer>*@
+    </div>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+                @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        function Arama() {
+            var x = document.getElementById("search");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function Bildirim() {
+            var x = document.getElementById("attachment");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </body>
+
 </html>
