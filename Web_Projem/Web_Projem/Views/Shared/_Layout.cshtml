@@ -51,7 +51,7 @@
                     @*Profile*@
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
+                        <a class="nav-link" style="color:white" asp-controller="Profil" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
 
                     </li>
 
@@ -108,3 +108,26 @@
 </body>
 
 </html>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDzQiwiijpWQkFDwI38hX4SsfEWhr4RIEc",
+        authDomain: "crsmartled.firebaseapp.com",
+        projectId: "crsmartled",
+        storageBucket: "crsmartled.appspot.com",
+        messagingSenderId: "527295378903",
+        appId: "1:527295378903:web:ed204c2452ccb084208792",
+        measurementId: "G-DTCJKDF1TH"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
