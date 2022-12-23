@@ -29,22 +29,24 @@
                         @* aram kisimi yazilacak*@
                         <div style="display:none;color:white;" id="search">
                             @* onkeypress fonksiyonu eklenecek*@
-                           <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:80%">
+                            <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:80%">
                             <button class="btn btn-outline" style="border:none;width:15%;color:white" onclick="DbAra()"><i class="material-icons">search</i></button>
-                           @*kişiler sergilenecek*@
-                           <div style="display:none;" id="sonuc"> 
+                            @*kişiler sergilenecek*@
+                            <div style="display:none;" id="sonuc">
                                 bişeyler
-                           </div>
+                            </div>
                         </div>
 
                     </li>
                     @*Attachments*@
                     <li class="nav-item">
-                        
+
                         <button class="btn btn-outline-secondary" style="color:white;border:none;" onclick="Bildirim()"><i class="material-icons">attachment</i>      Bildirimler</button>
                         @* bildirimler ekelenecek *@
-                        <div style="display:none;color:white" id="attachment"> bildirim falan filan</div>
-                    
+                        <div style="display:none;color:white" id="attachment">
+                            bildirim falan filan
+                        </div>
+
                     </li>
                     @*Profile*@
                     <li class="nav-item">
@@ -96,8 +98,8 @@
         function DbAra() {
             var x = document.getElementById("sonuc");
             if (x.style.display === "none") {
-                @*db işlemleri *@
-                x.style.display = "block";
+                    @*db işlemleri *@
+                    x.style.display = "block";
             } else {
                 x.style.display = "none";
             }
