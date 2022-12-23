@@ -17,27 +17,36 @@
             <div>
                 <h1 style="color:white">SaüLine</h1>
                 <ul class="nav flex-column">
+                    @* home *@
                     <li class="nav-item">
 
                         <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
                     </li>
+                    @*Search*@
                     <li class="nav-item">
 
                         <button class="btn btn-outline-secondary" style="color:white;border:none" onclick="Arama()"><i class="material-icons">search</i>   Arama</button>
                         @* aram kisimi yazilacak*@
                         <div style="display:none;color:white;" id="search">
                             @* onkeypress fonksiyonu eklenecek*@
-                           <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:90%">
+                           <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:80%">
+                            <button class="btn btn-outline" style="border:none;width:15%;color:white" onclick="DbAra()"><i class="material-icons">search</i></button>
+                           @*kişiler sergilenecek*@
+                           <div style="display:none;" id="sonuc"> 
+                                bişeyler
+                           </div>
                         </div>
 
                     </li>
+                    @*Attachments*@
                     <li class="nav-item">
                         
-                        <button class="btn btn-outline-secondary" style="color:white;border:none" onclick="Bildirim()"><i class="material-icons">attachment</i>      Bildirimler</button>
+                        <button class="btn btn-outline-secondary" style="color:white;border:none;" onclick="Bildirim()"><i class="material-icons">attachment</i>      Bildirimler</button>
                         @* bildirimler ekelenecek *@
-                        <div style="display:none" id="attachment"> bildirim falan filan</div>
+                        <div style="display:none;color:white" id="attachment"> bildirim falan filan</div>
                     
                     </li>
+                    @*Profile*@
                     <li class="nav-item">
 
                         <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
@@ -79,6 +88,15 @@
         function Bildirim() {
             var x = document.getElementById("attachment");
             if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function DbAra() {
+            var x = document.getElementById("sonuc");
+            if (x.style.display === "none") {
+                @*db işlemleri *@
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
