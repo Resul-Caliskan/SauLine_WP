@@ -8,9 +8,9 @@
 @*Login index*@
 
 <hr />
-<div class="row">
+<div class="row" id="login">
     <div class="col-2"></div>
-    <div class="col-4" style="color:white">
+    <div class="col-4" style="color:white;border-style:solid;border:solid;border-color:white;border-bottom:none;border-top:none;">
         <h1>Login</h1>
         <form asp-controller="Home" asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -24,15 +24,52 @@
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
+
             <div class="form-group" style="padding-left:80%;padding-top:5%">
                 <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+            <hr />
+        </form>
+        <button class="btn btn-outline-success" style="height:20%" onclick="sekme()">Register</button>
+    </div>
+    <div class="col-6"></div>
+</div>
+
+@* Register kısmı*@
+
+<div class="row" id="register" style="display:none;">
+    <div class="col-2"></div>
+    <div class="col-4" style="color:white;border-style:solid;border:solid;border-color:white;border-bottom:none;border-top:none">
+        <h1>Register</h1>
+        <form asp-controller="Login" asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="padding-left:80%;padding-top:5%">
+                <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
     </div>
     <div class="col-6"></div>
 </div>
 
-
+<script>
+    var login = document.getElementById("login");
+    var register = document.getElementById("register");
+    function sekme() {
+        login.style.display = "none";
+        register.style.display = "block";
+    }
+</script>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

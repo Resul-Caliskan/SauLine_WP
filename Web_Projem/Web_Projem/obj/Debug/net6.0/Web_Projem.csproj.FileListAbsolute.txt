@@ -482,3 +482,9 @@ C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\o
 C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\obj\Debug\net6.0\Web_Projem.pdb
 C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\obj\Debug\net6.0\Web_Projem.genruntimeconfig.cache
 C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\obj\Debug\net6.0\ref\Web_Projem.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\FireSharp.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\Microsoft.Threading.Tasks.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\System.Net.Http.Extensions.dll
+C:\Users\resul\OneDrive\Masaüstü\Web Projem\SauLine_WP\Web_Projem\Web_Projem\bin\Debug\net6.0\System.Net.Http.Primitives.dll
