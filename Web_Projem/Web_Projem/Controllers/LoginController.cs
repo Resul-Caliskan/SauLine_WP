@@ -2,9 +2,12 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Security.Claims;
 using System.Text.Json;
 using Web_Projem.Models;
 
@@ -23,7 +26,7 @@ namespace Web_Projem.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(Users user) 
+        public async  Task<IActionResult> Login(Users user) 
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("Users");
@@ -44,7 +47,15 @@ namespace Web_Projem.Controllers
             }
             if (dogru)
             {
-                return RedirectToAction("Index","Home",user.UserName);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name,user.UserName),
+                    new Claim(ClaimTypes.Role,"User")
+                };
+                var userId=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
+                ClaimsPrincipal principal= new ClaimsPrincipal(userId);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                return RedirectToAction("Index","Home");
             }
 
             return View(list);

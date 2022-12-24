@@ -6,7 +6,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(x=>
     {
-        x.LoginPath = "/Login/Index/";
+        x.Cookie.Name = "HelloR";
+        x.LoginPath = "/Login/Index";
     }
     );
 var app = builder.Build();
@@ -23,7 +24,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
