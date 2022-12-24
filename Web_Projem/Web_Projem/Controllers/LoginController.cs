@@ -4,7 +4,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using NuGet.Protocol;
+using Newtonsoft.Json.Linq;
 using System.Text.Json;
 using Web_Projem.Models;
 
@@ -29,12 +29,24 @@ namespace Web_Projem.Controllers
             FirebaseResponse response = client.Get("Users");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Users>();
-            Boolean dogru;
+            Boolean dogru=false;
             foreach (var item in data)
             {
-                list.Add(JsonConvert.DeserializeObject<Users>(((JsonProperty)item).Value.ToString()));
-               
+                list.Add(JsonConvert.DeserializeObject<Users>(((JProperty)item).Value.ToString()));
+                   
             }
+            foreach (var item in list)
+            {
+                if (item.UserName==user.UserName && item.Password==user.Password)
+                {
+                    dogru = true;
+                }
+            }
+            if (dogru)
+            {
+                return RedirectToAction("Index","Home",user.UserName);
+            }
+
             return View(list);
         }
         [HttpPost]

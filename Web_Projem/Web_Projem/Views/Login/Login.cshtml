@@ -1,0 +1,13 @@
+﻿@model List<Web_Projem.Models.Users>
+
+
+@foreach (var item in Model)
+{
+   
+    <div style="color:white">
+        <ul>
+            <li>@item.UserName</li>
+            <li>@item.Password</li>
+        </ul>
+    </div>
+}
