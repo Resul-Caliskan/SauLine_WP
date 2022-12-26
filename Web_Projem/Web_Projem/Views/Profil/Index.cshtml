@@ -1,7 +1,4 @@
-﻿@model Web_Projem.Models.Paylasim
-@*profil index*@
-
-<hr />
+﻿<hr />
 <div class="row" style="height:95%;background-color:rgb(30,30,30)">
     <div class="col-2"></div>
     <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
@@ -11,35 +8,14 @@
             </div>
             <div>
                 Yeni gönderi paylaş
-                <button class="btn btn-outline-secondary" onclick="paylasim(true)"> <i class="material-icons">add</i></button>
+                <a asp-controller="Profil" asp-action="GonderiOlustur"> <i class="material-icons">add</i></a>
             </div>
         </div>
     </div>
     <div class="col-6"></div>
 </div>
-<div class="row"  style="height:95%;background-color:rgb(30,30,30);">
-    <div class="col-2"></div>
-    <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
-        <div id="gonderi" style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);display:none">
-            <form asp-controller="Profil" asp-action="Paylas">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Url" class="control-label"></label>
-                    <input asp-for="Url" class="form-control" />
-                    <span asp-validation-for="Url" class="text-danger"></span>
-                </div>
 
-                <div class="form-group" style="padding-left:80%;padding-top:5%">
-                    <input type="submit" value="Paylaş" class="btn btn-primary" />
-                </div>
-                <hr />
-            </form>
-        </div>
-    </div>
-    <div class="col-6"></div>
-</div>
-
-@for (var i = 0; i < 5; i++)
+@foreach(var item in ViewBag.Liste)
 {
 
 
@@ -47,15 +23,16 @@
     <div class="row" style="height:95%;background-color:rgb(30,30,30)">
         <div class="col-2"></div>
         <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
-            @* buralarıda vetirabanından çek *@
+            
             <div style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);">
-                Adı
+                @TempData["ad"]
             </div>
             <div style="display:table;height:70%;width:100%">
-                <image src="https://www.sakarya.edu.tr/kutuphane/resimler/gorsel-kimlik/logo-yatay.jpg" style="height:auto;width:fit-content;max-width:400px"></image>
+                <image src="@item.Url" style="height:auto;width:fit-content;max-width:400px"></image>
             </div>
             <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
                 @* buraya veritabanından çek*@
+                
                 <i class="material-icons" onclick="kalp(this)">favorite</i>
                 <p>Açıklama</p>
                 <p>begenlenler</p>
@@ -68,19 +45,3 @@
         <div class="col-6"></div>
     </div>
 }
-<script>
-    var div = document.getElementById("gonderi");
-    function paylasim(deger)
-    {
-        if(deger)
-        {
-            
-            div.style.display = "contents";
-        }
-        else
-        {
-            div.style.display="none"
-        }
-    }
-    
-</script>

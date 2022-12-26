@@ -21,16 +21,43 @@ namespace Web_Projem.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            TempData["ad"]=HttpContext.Session.GetString("Username");
+            Paylasim paylasim = new Paylasim();
+            TempData["ad"] = HttpContext.Session.GetString("Username");
+            paylasim.User = HttpContext.Session.GetString("Username");
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Paylasim");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Paylasim>();
+            var Liste = new List<Paylasim>();
+            Boolean dogru = false;
+            foreach (var item in data)
+            {
+                list.Add(JsonConvert.DeserializeObject<Paylasim>(((JProperty)item).Value.ToString()));
+
+            }
+            foreach (var item in list)
+            {
+                if (item.User == paylasim.User)
+                {
+                    Liste.Add(item);
+                   
+                }
+            }
+            ViewBag.Liste = Liste;
+            return View();
+        }
+        public IActionResult GonderiOlustur()
+        {
+            TempData["ad"] = HttpContext.Session.GetString("Username");
             return View();
         }
         [HttpPost]
-         // Firebase eleman ekleme
+        // Firebase eleman ekleme
         public IActionResult Paylas(Paylasim paylasim)
         {
             try
             {
-               durum: Random random = new Random();   
+            durum: Random random = new Random();
                 int id = random.Next();
                 paylasim.User = HttpContext.Session.GetString("Username");
                 paylasim.Id = id;
@@ -51,11 +78,11 @@ namespace Web_Projem.Controllers
                         goto durum;
                     }
                 }
-                
-                
+
+
                 AddUser(paylasim);
                 ModelState.AddModelError(String.Empty, "Published Successfuly");
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
