@@ -55,6 +55,7 @@ namespace Web_Projem.Controllers
                 var userId=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal= new ClaimsPrincipal(userId);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                HttpContext.Session.SetString("Username",user.UserName);
                 return RedirectToAction("Index","Home");
             }
 

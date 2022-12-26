@@ -1,4 +1,5 @@
-﻿@*profil index*@
+﻿@model Web_Projem.Models.Paylasim
+@*profil index*@
 
 <hr />
 <div class="row" style="height:95%;background-color:rgb(30,30,30)">
@@ -6,7 +7,7 @@
     <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
         <div class="row">
             <div>
-               Kullanıcıı adı 
+               @TempData["ad"]
             </div>
             <div>
                 Yeni gönderi paylaş
@@ -20,22 +21,19 @@
     <div class="col-2"></div>
     <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
         <div id="gonderi" style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);display:none">
-        <div  style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);">
-            Kullınıcı Adı
-        </div>
-        <div style="display:table;height:70%;width:100%">
-            <p>Url  giriniz:</p>
-            <input type="text" placeholder="Paylaşacağınız url i giriniz...">
-            
-        </div>
-        <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
-            <p>Açıklama:</p>
-            <input type="text" placeholder="açıklama...">
-        </div>
-        <div class="row">
-            <div class="col-2"><button class="btn btn-outline-primary" style="border:none" onclick="paylasim(false)">İptal</button></div>
-            <div class="col-2"><button class="btn btn-outline-primary" style="border:none">paylaş</button></div>
-        </div>
+            <form asp-controller="Profil" asp-action="Paylas">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Url" class="control-label"></label>
+                    <input asp-for="Url" class="form-control" />
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="padding-left:80%;padding-top:5%">
+                    <input type="submit" value="Paylaş" class="btn btn-primary" />
+                </div>
+                <hr />
+            </form>
         </div>
     </div>
     <div class="col-6"></div>

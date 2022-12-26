@@ -8,6 +8,13 @@ namespace Web_Projem.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            TempData["ad"]=HttpContext.Session.GetString("Username");
+            return View();
+        }
+        [HttpPost]
+         // Firebase eleman ekleme
+        public IActionResult Paylas()
+        {
             return View();
         }
     }
