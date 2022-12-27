@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp;
+using FireSharp.Response;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Web_Projem.Models;
 
@@ -6,6 +10,12 @@ namespace Web_Projem.Controllers
 {
     public class CallAdminApiController : Controller
     {
+        FirebaseClient client;
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "gcXSL3OsYxwnTQ4l2MlbJ2O1LN3k8gD1ZLbSO0Pp",
+            BasePath = "https://crsmartled-default-rtdb.europe-west1.firebasedatabase.app/"
+        };
         public async  Task<IActionResult> Index()
         {
             List<Paylasim> paylasim = new List<Paylasim>();
@@ -14,6 +24,13 @@ namespace Web_Projem.Controllers
             dynamic resString = await response.Content.ReadAsStringAsync();
             paylasim = JsonConvert.DeserializeObject<List<Paylasim>>(resString);
             return View(paylasim);
+        }
+        [HttpPost("{id}")]
+        public IActionResult Delete(int id) 
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Delete("Paylasim/"+id);
+            return RedirectToAction("CallAdmin/Index");
         }
     }
 }
