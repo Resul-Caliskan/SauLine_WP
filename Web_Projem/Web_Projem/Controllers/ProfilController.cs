@@ -24,6 +24,7 @@ namespace Web_Projem.Controllers
             Paylasim paylasim = new Paylasim();
             TempData["ad"] = HttpContext.Session.GetString("Username");
             paylasim.User = HttpContext.Session.GetString("Username");
+            paylasim.Begeni = 0;
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("Paylasim");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);

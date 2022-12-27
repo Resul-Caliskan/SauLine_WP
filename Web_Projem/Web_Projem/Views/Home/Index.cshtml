@@ -5,7 +5,7 @@
 
 @*home index *@
 
-@foreach(var item in ViewBag.Liste)
+@foreach (var item in ViewBag.Liste)
 {
 
 
@@ -19,12 +19,22 @@
             </div>
             <div style="display:table;height:70%;width:100%">
                 <image src="@item.Url" style="height:auto;width:fit-content;max-width:400px"></image>
+                <p style="display:none">@item.Id</p>
             </div>
             <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
                 @* buraya veritabanından çek*@
-                <i class="material-icons" onclick="kalp(this)">favorite</i>
-                <p>Açıklama</p>
-                <p>begenlenler</p>
+                <div class="row">
+                    <div class="col-1">
+                        <i class="material-icons" onclick="kalp(this)">favorite</i>
+                    </div>
+                    <div class="col-1">
+                        @item.Begeni
+                    </div>
+                    <div class="col-10"></div>
+                </div>
+
+                @*aciklama kismi*@
+                <p>* @item.Aciklama</p>
             </div>
             <div class="row">
                 <div class="col-10"> <input type="text" placeholder="Yorum Ekle..." style="background-color:black;color:white;width:90%"></div>
@@ -38,13 +48,14 @@
 
 <script>
     let durum = false;
+    
     function kalp(element) {
-        durum=!durum;
+        durum = !durum;
         if (durum) {
-            element.style.color="red";
+            element.style.color = "red";
         }
-        else{
-            element.style.color="white";
+        else {
+            element.style.color = "white";
         }
     }
 </script>
