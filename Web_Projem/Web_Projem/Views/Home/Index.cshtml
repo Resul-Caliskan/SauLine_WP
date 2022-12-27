@@ -5,7 +5,7 @@
 
 @*home index *@
 
-@for (var i = 0; i < 5; i++)
+@foreach(var item in ViewBag.Liste)
 {
 
 
@@ -15,10 +15,10 @@
         <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
             @* buralarıda vetirabanından çek *@
             <div style="border-style:solid;border-radius:4%;border-color:rgb(35,35,35);">
-                Adı
+                @item.User
             </div>
             <div style="display:table;height:70%;width:100%">
-                <image src="https://www.sakarya.edu.tr/kutuphane/resimler/gorsel-kimlik/logo-yatay.jpg" style="height:auto;width:fit-content;max-width:400px"></image>
+                <image src="@item.Url" style="height:auto;width:fit-content;max-width:400px"></image>
             </div>
             <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
                 @* buraya veritabanından çek*@
