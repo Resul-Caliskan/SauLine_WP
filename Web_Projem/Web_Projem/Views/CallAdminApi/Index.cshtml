@@ -1,0 +1,49 @@
+﻿@model List<Web_Projem.Models.Paylasim>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1 style="color:white">Paylaşımlar</h1>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Açıklama
+            </th>
+            <th>
+                Yorum
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.User)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Aciklama)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Yorum)
+                </td>
+                <td>
+
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
