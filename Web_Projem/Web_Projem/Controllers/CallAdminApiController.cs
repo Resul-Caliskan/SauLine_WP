@@ -25,12 +25,12 @@ namespace Web_Projem.Controllers
             paylasim = JsonConvert.DeserializeObject<List<Paylasim>>(resString);
             return View(paylasim);
         }
-        [HttpPost("{id}")]
+        [HttpPost]
         public IActionResult Delete(int id) 
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Delete("Paylasim/"+id);
-            return RedirectToAction("CallAdmin/Index");
+            return RedirectToAction("Index","CallAdminApi");
         }
     }
 }
