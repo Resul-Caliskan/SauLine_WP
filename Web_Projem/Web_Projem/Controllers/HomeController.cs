@@ -24,7 +24,7 @@ namespace Web_Projem.Controllers
         {
             _logger = logger;
         }
-        [Authorize]
+        [Authorize(Roles = "User")]
         public IActionResult Index()
         {
                      

@@ -5,6 +5,7 @@ using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Web_Projem.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Web_Projem.Controllers
 {
@@ -16,6 +17,7 @@ namespace Web_Projem.Controllers
             AuthSecret = "gcXSL3OsYxwnTQ4l2MlbJ2O1LN3k8gD1ZLbSO0Pp",
             BasePath = "https://crsmartled-default-rtdb.europe-west1.firebasedatabase.app/"
         };
+        [Authorize(Roles ="Admin")]
         public async  Task<IActionResult> Index()
         {
             List<Paylasim> paylasim = new List<Paylasim>();

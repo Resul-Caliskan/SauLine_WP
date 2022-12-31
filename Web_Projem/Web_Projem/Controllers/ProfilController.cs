@@ -18,7 +18,7 @@ namespace Web_Projem.Controllers
             AuthSecret = "gcXSL3OsYxwnTQ4l2MlbJ2O1LN3k8gD1ZLbSO0Pp",
             BasePath = "https://crsmartled-default-rtdb.europe-west1.firebasedatabase.app/"
         };
-        [Authorize]
+        [Authorize(Roles ="User")]
         public IActionResult Index()
         {
             Paylasim paylasim = new Paylasim();

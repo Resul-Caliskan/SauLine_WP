@@ -49,8 +49,8 @@ namespace Web_Projem.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name,user.UserName),
-                    new Claim(ClaimTypes.Role,"User")
+                    new Claim(ClaimTypes.Role,"User"),
+                   
                 };
                 var userId=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal= new ClaimsPrincipal(userId);

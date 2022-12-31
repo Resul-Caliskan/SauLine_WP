@@ -15,7 +15,7 @@ namespace Web_Projem.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class AdminApiController : ControllerBase
     {
         FirebaseClient client;

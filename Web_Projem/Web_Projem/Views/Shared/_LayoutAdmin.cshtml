@@ -20,13 +20,13 @@
                     @* home *@
                     <li class="nav-item">
 
-                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
+                        <a class="nav-link" style="color:white" asp-controller="AdminPanel" asp-action="Home"><i class="material-icons">home</i>     Anasayfa</a>
                     </li>
                    
                     @*Paylaşım yönetme*@
                     <li class="nav-item">
 
-                        <button class="btn btn-outline-secondary" style="color:white;border:none;"><i class="material-icons">attachment</i>Yapılan Paylaşımları Yönet</button>
+                        <a class="nav-link" style="color:white;border:none;" asp-action="Index" asp-controller="CallAdminApi"><i class="material-icons">attachment</i>Yapılan Paylaşımları Yönet</a>
                         
                         
 

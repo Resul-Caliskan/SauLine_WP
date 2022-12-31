@@ -9,6 +9,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         x.Cookie.Name = "LoginCookie";
         x.LoginPath = "/Login/Index";
+        x.AccessDeniedPath = "/Login/Index";
+        
     }
     );
 var app = builder.Build();
