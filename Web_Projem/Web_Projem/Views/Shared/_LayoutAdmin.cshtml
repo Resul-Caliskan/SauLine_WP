@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web_Projem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web_Projem.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body style="overflow: auto;overflow-x:hidden;background-color:rgb(30,30,30)">
+
+    <div class="row">
+        <div class="col-2" style="height:100vh;background-color:black;position:fixed">
+
+            <div>
+                <h1 style="color:white">SaüLine</h1>
+                <ul class="nav flex-column">
+                    @* home *@
+                    <li class="nav-item">
+
+                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
+                    </li>
+                   
+                    @*Paylaşım yönetme*@
+                    <li class="nav-item">
+
+                        <button class="btn btn-outline-secondary" style="color:white;border:none;"><i class="material-icons">attachment</i>Yapılan Paylaşımları Yönet</button>
+                        
+                        
+
+                    </li>
+                   
+
+                </ul>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="col-2" style="background-color:rgb(30,30,30)"></div>
+        <div class="col-10" style="background-color:rgb(30,30,30)">
+
+            <main role="main" class="pb-3" ">
+                @RenderBody()
+            </main>
+
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+                @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        function Arama() {
+            var x = document.getElementById("search");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function Bildirim() {
+            var x = document.getElementById("attachment");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function DbAra() {
+            var x = document.getElementById("sonuc");
+            if (x.style.display === "none") {
+                    @*db işlemleri *@
+                    x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDzQiwiijpWQkFDwI38hX4SsfEWhr4RIEc",
+        authDomain: "crsmartled.firebaseapp.com",
+        projectId: "crsmartled",
+        storageBucket: "crsmartled.appspot.com",
+        messagingSenderId: "527295378903",
+        appId: "1:527295378903:web:ed204c2452ccb084208792",
+        measurementId: "G-DTCJKDF1TH"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>

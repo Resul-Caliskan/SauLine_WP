@@ -1,0 +1,30 @@
+﻿@model Web_Projem.Models.Users
+@{
+    Layout = "_LayoutAdmin";
+}
+<hr />
+<div class="row" id="Admin">
+    <div class="col-2"></div>
+    <div class="col-4" style="color:white;border-style:solid;border:solid;border-color:white;border-bottom:none;border-top:none;">
+        <h1>Admin</h1>
+        <form asp-controller="AdminPanel" asp-action="Home">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="padding-left:80%;padding-top:5%">
+                <input type="submit" value="Giriş" class="btn btn-primary" />
+            </div>
+            <hr />
+        </form>
+    </div>
+    <div class="col-6"></div>
+</div>
