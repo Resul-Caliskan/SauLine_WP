@@ -96,7 +96,7 @@ namespace Web_Projem.Controllers
         {
             client = new FireSharp.FirebaseClient(config);
             var data = send;
-            PushResponse respone = client.Push("Paylasim/", data);
+            SetResponse respone = client.Set("Paylasim/"+send.Id, data);
             //data.UserName = respone.Result.name;
             //SetResponse setResponse = client.Set("Users/"+data.UserName,data);
         }

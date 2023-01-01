@@ -10,6 +10,7 @@
 
 
     <hr />
+    <p>@item.Id</p>
     <div class="row" style="height:95%;background-color:rgb(30,30,30)">
         <div class="col-2"></div>
         <div class="col-4" style="border-style:solid;border-color:rgb(80,80,80);color:white;height:70%">
@@ -24,13 +25,13 @@
             <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
                 @* buraya veritabanından çek*@
                 <div class="row">
-                    <div class="col-1">
-                        <i class="material-icons" onclick="kalp(this)">favorite</i>
+                    <div class="col-2">
+                        <a asp-action="KalpA" asp-controller="Home" style="background-color:black" onclick="kalp(this)" asp-route-id="@item.Id" ><i class="material-icons" style="color:white" id="kalp">favorite</i></a>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         @item.Begeni
                     </div>
-                    <div class="col-10"></div>
+                    <div class="col-8"></div>
                 </div>
 
                 @*aciklama kismi*@
@@ -46,16 +47,19 @@
 }
 
 
-<script>
+<script type="text/javascript">
     let durum = false;
-    
+    var item = document.getElementById("kalp");
     function kalp(element) {
         durum = !durum;
         if (durum) {
-            element.style.color = "red";
+            item.style.color = "red";
+            
+            
         }
         else {
-            element.style.color = "white";
+            element.href = "#";
+            item.style.color = "white";
         }
     }
 </script>

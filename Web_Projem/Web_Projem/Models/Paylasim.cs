@@ -6,7 +6,7 @@ namespace Web_Projem.Models
 {
     public class Paylasim
     {
-
+        [Key]
         public int Id { get; set; }
         public String User { get; set; }
         [Required]

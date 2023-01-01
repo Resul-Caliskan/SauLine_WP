@@ -40,7 +40,32 @@ namespace Web_Projem.Controllers
             ViewBag.Liste = list;
             return View();
         }
+        [HttpGet]
+        public IActionResult KalpA(int id)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Paylasim");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Paylasim>();
+            Boolean dogru = false;
+            foreach (var item in data)
+            {
+                list.Add(JsonConvert.DeserializeObject<Paylasim>(((JProperty)item).Value.ToString()));
 
-        
+            }
+            foreach (var item in list)
+            {
+                if (item.Id==id)
+                {
+                    dogru = true;
+                    item.Begeni += 1;
+                    SetResponse respone = client.Set("Paylasim/" + item.Id, item);
+                    return RedirectToAction("Index");
+                }
+            }
+            return Ok(id);
+           
+          
+        }
     }
 }
