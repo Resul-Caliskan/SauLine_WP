@@ -27,7 +27,7 @@ namespace Web_Projem.Controllers
             paylasim = JsonConvert.DeserializeObject<List<Paylasim>>(resString);
             return View(paylasim);
         }
-        [HttpPost]
+        [HttpGet]
         public IActionResult Delete(int id) 
         {
             client = new FireSharp.FirebaseClient(config);

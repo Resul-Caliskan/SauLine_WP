@@ -19,8 +19,16 @@
                 <ul class="nav flex-column">
                     @* home *@
                     <li class="nav-item">
-
-                        <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
+                        <div class="row">
+                            <div class="col-3" style="color:white">
+                               <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"> <i class="material-icons">home</i> </a>
+                            </div>
+                            <div class="col-3">
+                                <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index" id="home">  Anasayfa  </a>
+                            </div>
+                        
+                        
+                        </div>
                     </li>
                    @* @*Search
                     <li class="nav-item">
@@ -50,12 +58,39 @@
                     </li>*@
                     @*Profile*@
                     <li class="nav-item">
+                        <div class="row">
+                            <div class="col-3" style="color:white">
+                                <a class="nav-link" style="color:white" asp-controller="Profil" asp-action="Index"> <i class="material-icons">person</i>  </a>
+                            </div>
+                            <div class="col-3">
+                                <a class="nav-link" style="color:white" asp-controller="Profil" asp-action="Index" id ="profil">     Profilim</a>
 
-                        <a class="nav-link" style="color:white" asp-controller="Profil" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
+                            </div>
 
+
+                        </div>
+                       
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-3" style="color:white">
+                                <a class="nav-link" style="color:white"> <i class="material-icons" onclick="dil()">language</i></a>
+                            </div>
+                            <div class="col-3">
+                                <a class="nav-link" style="color:white" id="dil" onclick="dil()">  Türkçe</a>
+
+                            </div>
+
+
+                        </div>
+                       
+                        
+                       
+                           
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:white" asp-controller="Login" asp-action="Index"><distributed-cache class="material-icons">logout</i> Çıkış</a>
+                        <a class="nav-link" style="color:white" asp-controller="Login" asp-action="Index"><i class="material-icons">logout</i></a>
+                            
                     </li>
                 </ul>
 
@@ -132,4 +167,40 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+</script>
+<script>
+    let deger=false;
+    function dil() {
+        deger=!deger;
+        if(deger)
+        {
+            document.getElementById("home").innerHTML = 'Home';
+            document.getElementById("profil").innerHTML="Profile";
+            document.getElementById("dil").innerHTML = "English";
+            document.getElementById("yeniG").innerHTML = "Share New Post";
+            document.getElementsByName("gonder").forEach((item)=>{
+            item.innerHTML="Share"});
+            document.getElementsByName("yorum").forEach((item) => {
+                item.placeholder="Add Comment..."
+            });
+            
+        }
+        else
+        {
+            document.getElementById("home").innerHTML = 'Anasayfa';
+            document.getElementById("profil").innerHTML = "Profilim";
+            document.getElementById("yeniG").innerHTML = "Yeni Gönderi Paylaş";
+            document.getElementById("dil").innerHTML = "Türkçe";
+            document.getElementsByName("gonder").forEach((item) => {
+                item.innerHTML = "Paylaş"
+            });
+            document.getElementsByName("yorum").forEach((item) => {
+                item.placeholder = "Yorum Ekle..."
+            });
+            
+        }
+
+        
+        
+    }
 </script>

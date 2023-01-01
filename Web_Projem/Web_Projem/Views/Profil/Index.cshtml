@@ -7,7 +7,7 @@
                @TempData["ad"]
             </div>
             <div>
-                Yeni gönderi paylaş
+                <a id ="yeniG">Yeni gönderi paylaş</a>
                 <a asp-controller="Profil" asp-action="GonderiOlustur"> <i class="material-icons">add</i></a>
             </div>
         </div>
@@ -32,14 +32,22 @@
             </div>
             <div style="border-style:solid;border-radius:2%;border-color:rgb(50,50,50);">
                 @* buraya veritabanından çek*@
-                
-                <i class="material-icons" onclick="kalp(this)">favorite</i>
-                <p>Açıklama</p>
-                <p>begenlenler</p>
+                <div class="row">
+                    <div class="col-2">
+                        <a asp-action="KalpA" asp-controller="Home" style="background-color:black" onclick="kalp(this)" asp-route-id="@item.Id"><i class="material-icons" style="color:white" id="kalp">favorite</i></a>
+                    </div>
+                    <div class="col-2">
+                        @item.Begeni
+                    </div>
+                    <div class="col-8"></div>
+                </div>
+
+                @*aciklama kismi*@
+                <p>* @item.Aciklama</p>
             </div>
             <div class="row">
-                <div class="col-10"> <input type="text" placeholder="Yorum Ekle..." style="background-color:black;color:white;width:90%"></div>
-                <div class="col-2"><button class="btn btn-outline-primary" style="border:none">paylaş</button></div>
+                <div class="col-10"> <input type="text" placeholder="Yorum Ekle..." name ="yorum" style="background-color:black;color:white;width:90%"></div>
+                <div class="col-2"><button class="btn btn-outline-primary" style="border:none" name="gonder">paylaş</button></div>
             </div>
         </div>
         <div class="col-6"></div>
