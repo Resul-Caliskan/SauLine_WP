@@ -22,39 +22,41 @@
 
                         <a class="nav-link" style="color:white" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i>     Anasayfa</a>
                     </li>
-                    @*Search*@
+                   @* @*Search
                     <li class="nav-item">
 
                         <button class="btn btn-outline-secondary" style="color:white;border:none" onclick="Arama()"><i class="material-icons">search</i>   Arama</button>
-                        @* aram kisimi yazilacak*@
+                        @* aram kisimi yazilacak
                         <div style="display:none;color:white;" id="search">
-                            @* onkeypress fonksiyonu eklenecek*@
+                            @* onkeypress fonksiyonu eklenecek
                             <input type="text" placeholder="Ara..." style="background-color:black;color:white;width:80%">
                             <button class="btn btn-outline" style="border:none;width:15%;color:white" onclick="DbAra()"><i class="material-icons">search</i></button>
-                            @*kişiler sergilenecek*@
+                            @*kişiler sergilenecek
                             <div style="display:none;" id="sonuc">
                                 bişeyler
                             </div>
                         </div>
 
                     </li>
-                    @*Attachments*@
+                    @*Attachments
                     <li class="nav-item">
 
                         <button class="btn btn-outline-secondary" style="color:white;border:none;" onclick="Bildirim()"><i class="material-icons">attachment</i>      Bildirimler</button>
-                        @* bildirimler ekelenecek *@
+                        @* bildirimler ekelenecek 
                         <div style="display:none;color:white" id="attachment">
                             bildirim falan filan
                         </div>
 
-                    </li>
+                    </li>*@
                     @*Profile*@
                     <li class="nav-item">
 
                         <a class="nav-link" style="color:white" asp-controller="Profil" asp-action="Index"><i class="material-icons">person</i>       Profilim</a>
 
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:white" asp-controller="Login" asp-action="Index"><distributed-cache class="material-icons">logout</i> Çıkış</a>
+                    </li>
                 </ul>
 
             </div>
